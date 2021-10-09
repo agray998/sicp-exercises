@@ -1,5 +1,5 @@
 ## Exercise 1.1: given the following sequence of expressions, what result is printed for each expression.  
-'''
+---
 10  
 (+ 5 3 4)  
 (- 9 1)  
@@ -20,9 +20,9 @@
          ((< a b) b)  
          (else -1))  
    (+ a 1))  
-'''
+---
 Solutions:  
-'''
+---
 10  
 12  
 8  
@@ -36,4 +36,4 @@ false
 16  
 6  
 16
-'''
+---
