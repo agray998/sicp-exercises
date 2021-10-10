@@ -6,8 +6,10 @@ absolute n | (<) n 0 = -n
 
 improve n i = (/) ((+) ((/) n ((^) i 2)) ((*) 2 i)) 3
 
-newtonCubeRoot i n | (<) (absolute ((-) ((^) i 3) n)) 0.0001 = i
-                   | otherwise = newtonCubeRoot (improve n i) n
+newtonCubeRootIter i n | (<) (absolute ((-) ((^) i 3) n)) 0.0001 = i
+                       | otherwise = newtonCubeRootIter (improve n i) n
+
+newtonCubeRoot = newtonCubeRootIter 1.0
 
 main = do
-    print $ newtonCubeRoot 3.0 64.0
+    print $ newtonCubeRoot 64.0

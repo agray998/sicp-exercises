@@ -15,10 +15,13 @@ method for calculating cube roots. |#
 (define (good-enough? guess x)
         (< (abs (- (cube guess) x)) 0.001))
 
-(define (cube-root guess x)
+(define (cube-root-iter guess x)
         (if (good-enough? guess x)
             guess
-            (cube-root (improve guess x) x)))
+            (cube-root-iter (improve guess x) x)))
 
-(cube-root 3.0 64)
+(define (cube-root x)
+        (cube-root-iter 1.0 x))
+
+(cube-root 64)
 
